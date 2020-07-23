@@ -102,17 +102,11 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_USES_C2D_COMPOSITION := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 1
 
-# Text layout engine
-USE_MINIKIN := true
-
 # SEPolicy
 # BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Properties split
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-
-# Configure jemalloc for low memory
-MALLOC_SVELTE := true
 
 # MTK Hardware flags
 BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
@@ -121,9 +115,6 @@ BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # EGL
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
-
-# Legacy blobs
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Allow vendor duplicate overrides
 BUILD_BROKEN_DUP_RULES := true
@@ -138,16 +129,11 @@ LZMA_RAMDISK_TARGETS := recovery
 # TWRP specific build flags
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
-# Add logcat support
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
 # Do not set up legacy properties
 TW_NO_LEGACY_PROPS := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 127
 TW_USE_TOOLBOX := true
-TW_INCLUDE_NTFS_3G := true
 TW_EXCLUDE_TWRPAPP := true
-TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
