@@ -3,6 +3,6 @@
     "remote": "github",
     "repository": "crazo7924/android_kernel_lenovo_k5fpr",
     "target_path": "kernel/lenovo/k5fpr",
-    "revision": "lineage-16.0"
+    "revision": "pie"
   }
 ]
