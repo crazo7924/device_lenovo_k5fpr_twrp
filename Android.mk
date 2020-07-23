@@ -1,11 +1,10 @@
-#
-# Copyright (C) 2017 The Android Open-Source Project
+# Copyright (C) 2016 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,14 +13,10 @@
 # limitations under the License.
 #
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+ifneq ($(filter k5fpr,$(TARGET_DEVICE)),)
 
-$(call inherit-product, build/target/product/embedded.mk)
+LOCAL_PATH := $(call my-dir)
 
-PRODUCT_NAME := omni_k5fpr
-PRODUCT_DEVICE := k5fpr
-PRODUCT_BRAND := Lenovo
-PRODUCT_MODEL := Lenovo K4 Note
-PRODUCT_MANUFACTURER := Lenovo
-PRODUCT_BOARD := mt6753
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+endif
